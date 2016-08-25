@@ -6,7 +6,6 @@ var animal = {
 animal.username = "Jim"
 
 counter = 0
-
 for (var key in animal) {
   counter++
   console.log(counter);
@@ -44,4 +43,19 @@ var sid = {
 
 animals.push(porky)
 animals.push(sid)
+
+var friends = []
+friends.push(sid.username, porky.username)
+
+var relationships = {
+  friends: friends,
+  matches: []
+}
+
+relationships.matches.push(animal.username)
+
+for (var counter in animals) {
+  animals[counter].relationships = relationships
+}
+
 console.log(animals)
